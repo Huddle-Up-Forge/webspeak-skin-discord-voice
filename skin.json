@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "community.discord-voice",
+  "name": "Discord Voice",
+  "version": "1.0.3",
+  "author": "WebSpeak Project",
+  "license": "AGPL-3.0-only",
+  "description": "A Discord-inspired dark voice workspace built with WebSpeak's portable open-skin interface.",
+  "minAppVersion": "0.2.8",
+  "package": {
+    "ref": "v1.0.3",
+    "path": "discord-voice.wskin",
+    "sha256": "f5e7a4838022ab125b9c84dfd721a2c5927c09982e170f19a116c156506da8b0"
+  }
+}
