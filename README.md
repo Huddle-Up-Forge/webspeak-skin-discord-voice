@@ -10,9 +10,9 @@ A portable Discord-inspired WebSpeak skin. Layout, CSS and all five translations
 
 In a WebSpeak instance with the skin store, open **Skins → Skin store → Discord Voice → Install**. Enable it or set the instance default under Instance skins. Visitors still approve surface replacement and requested capabilities.
 
-也可下载 [v1.0.3 归档](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.3/discord-voice.wskin) 后在 `/admin/skins` 导入。最低应用版本：WebSpeak 0.2.8（需包含当前公开皮肤接口）。
+也可下载 [v1.0.5 归档](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.5/discord-voice.wskin) 后在 `/admin/skins` 导入。最低应用版本：WebSpeak 0.2.8（需包含当前公开皮肤接口）。
 
-You can also download the [v1.0.3 archive](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.3/discord-voice.wskin) and import it at `/admin/skins`. Requires WebSpeak 0.2.8 with the current public skin API.
+You can also download the [v1.0.5 archive](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.5/discord-voice.wskin) and import it at `/admin/skins`. Requires WebSpeak 0.2.8 with the current public skin API.
 
 ## 构建与发布 / Build and publish
 

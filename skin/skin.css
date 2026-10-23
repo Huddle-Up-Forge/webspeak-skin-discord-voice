@@ -500,7 +500,7 @@
    ========================================================================== */
 
 /* ==========================================================================
-   Discord desktop-client shell (.discord-app-shell, rendered by WebClient.vue)
+   Discord desktop-client shell (declared in components.json)
    Columns: server rail | channel sidebar | voice stage | optional text chat
    ========================================================================== */
 :root .discord-app-shell {
@@ -518,7 +518,7 @@
   color: var(--skin-discord-text-normal);
 }
 
-:root .discord-app-shell:has([data-ws-plugin-part="chat-toggle"][aria-expanded="false"]) {
+:root .discord-app-shell:has([data-ws-part="skin.voice.discord-workspace.part-chat-toggle"][aria-expanded="false"]) {
   grid-template-columns: 72px 240px minmax(0, 1fr) !important;
 }
 
@@ -1909,11 +1909,11 @@
 }
 :root [data-ws-part="voice.screen-player.stage"] { background:#000; }
 :root [data-ws-part="voice.screen-player.video"] { object-fit:contain; background:#000; }
-:root .discord-app-shell:has([data-ws-plugin-part="chat-toggle"][aria-expanded="false"]) {
+:root .discord-app-shell:has([data-ws-part="skin.voice.discord-workspace.part-chat-toggle"][aria-expanded="false"]) {
   grid-template-columns:72px 240px minmax(0,1fr) !important;
 }
 @media (max-width: 1050px) {
-  :root .discord-app-shell:has([data-ws-plugin-part="chat-toggle"][aria-expanded="false"]) {
+  :root .discord-app-shell:has([data-ws-part="skin.voice.discord-workspace.part-chat-toggle"][aria-expanded="false"]) {
     grid-template-columns:64px 210px minmax(0,1fr) !important;
   }
   :root .dc-chat {
@@ -1956,7 +1956,13 @@
   :root .join-footer { min-height: 53px; }
   :root .discord-app-shell {
     grid-template-columns:minmax(0,1fr) !important;
-    grid-template-rows:54px minmax(120px,32dvh) minmax(0,1fr) !important;
+    grid-template-rows:54px auto minmax(500px,auto) !important;
+    align-content:start;
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+  :root .discord-app-shell:has([data-ws-part="skin.voice.discord-workspace.part-chat-toggle"][aria-expanded="false"]) {
+    grid-template-columns:minmax(0,1fr) !important;
   }
   :root .dc-rail {
     grid-column:1 !important; grid-row:1 !important; width:100%; height:54px;
@@ -1965,14 +1971,29 @@
   :root .dc-rail-list { flex-direction:row; width:auto; }
   :root .dc-rail-item { width:52px; flex:0 0 auto; }
   :root .dc-sidebar {
-    grid-column:1 !important; grid-row:2 !important; min-height:0; max-height:none; border-radius:0;
+    grid-column:1 !important; grid-row:2 !important; min-height:430px; max-height:none; border-radius:0;
   }
-  :root .dc-sidebar-scroll { min-height:48px; overflow-y:auto; }
+  :root .dc-sidebar-scroll { flex:1 0 150px; min-height:150px; max-height:260px; overflow-y:auto; }
   :root .dc-connected { min-height:48px; }
   :root .dc-user-bar { min-height:48px; padding:6px 8px; }
-  :root .dc-stage { grid-column:1 !important; grid-row:3 !important; }
+  :root .dc-user-actions [role="toolbar"] { display:flex; align-items:center; gap:8px; }
+  :root .dc-user-actions [role="toolbar"] > button {
+    display:inline-grid; place-items:center; width:44px; height:44px; padding:0;
+    border:0; border-radius:8px; background:var(--skin-discord-bg-input); color:var(--skin-discord-text-normal);
+  }
+  :root .dc-user-actions [role="toolbar"] > button[aria-pressed="false"] { color:var(--skin-discord-red); }
+  :root .dc-user-actions [role="toolbar"] > button > span { display:none; }
+  :root .dc-stage { grid-column:1 !important; grid-row:3 !important; min-height:500px; }
   :root .dc-chat { position:fixed; inset:0; z-index:90; width:100%; }
   :root .join-header { align-items:flex-start; flex-direction:column; }
   :root .join-header-tools { width:100%; justify-content:flex-end; }
   :root .join-content { grid-template-columns:minmax(0,1fr); gap:20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root *, :root *::before, :root *::after {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
 }

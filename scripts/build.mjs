@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { zipSync } from "fflate";
 const source = new URL("../skin/", import.meta.url);
-const files = Object.fromEntries(await Promise.all(["manifest.json", "components.json", "content.json", "skin.css"].map(async name => [name, await readFile(new URL(name, source))])));
+const files = Object.fromEntries(await Promise.all(["manifest.json", "components.json", "content.json", "skin.css"].map(async name => [name, Buffer.from((await readFile(new URL(name, source), "utf8")).replace(/\r\n/g, "\n"))])));
 const archive = zipSync(files, { level: 9, mtime: new Date("2020-01-01T00:00:00.000Z") });
 const manifest = JSON.parse(new TextDecoder().decode(files["manifest.json"]));
 const metadata = { schemaVersion: 1, ...Object.fromEntries(["id", "name", "version", "author", "license", "description", "minAppVersion"].map(key => [key, manifest[key]])), package: { ref: `v${manifest.version}`, path: "discord-voice.wskin", sha256: createHash("sha256").update(archive).digest("hex") } };
