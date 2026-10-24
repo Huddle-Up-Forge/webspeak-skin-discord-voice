@@ -14,6 +14,17 @@ In a WebSpeak instance with the skin store, open **Skins → Skin store → Disc
 
 You can also download the [v1.0.5 archive](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.5/discord-voice.wskin) and import it at `/admin/skins`. Requires WebSpeak 0.2.8 with the current public skin API.
 
+## 贡献者与来源 / Contributors and origin
+
+- [@yichen11818](https://github.com/yichen11818)（原始提交署名 **yumi**）：Discord 风格皮肤的原始设计与实现，见 WebSpeak [PR #52](https://github.com/EchoSixHIYA/WebSpeak-client-for-TeamSpeak/pull/52) 及早期的 [PR #27](https://github.com/EchoSixHIYA/WebSpeak-client-for-TeamSpeak/pull/27)。
+- WebSpeak 项目：将原作移植为独立的 `.wskin` 包，适配公开皮肤接口，并维护分发与后续更新。
+
+The original Discord-style skin was designed and implemented by [@yichen11818](https://github.com/yichen11818), whose original commits are signed **yumi**. It was submitted in WebSpeak [PR #52](https://github.com/EchoSixHIYA/WebSpeak-client-for-TeamSpeak/pull/52), following the earlier [PR #27](https://github.com/EchoSixHIYA/WebSpeak-client-for-TeamSpeak/pull/27). The WebSpeak project adapted it into this portable `.wskin` package and maintains its public-API integration and distribution.
+
+本仓库保留了从原始 PR 提取的皮肤源码提交及原作者署名。当前发行包的源码位于 `skin/`。
+
+This repository preserves the skin-only source history from the original PR with its original authorship. Sources for the current release are in `skin/`.
+
 ## 构建与发布 / Build and publish
 
 ```sh
