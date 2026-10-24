@@ -10,9 +10,9 @@ A portable Discord-inspired WebSpeak skin. Layout, CSS and all five translations
 
 In a WebSpeak instance with the skin store, open **Skins → Skin store → Discord Voice → Install**. Enable it or set the instance default under Instance skins. Visitors still approve surface replacement and requested capabilities.
 
-也可下载 [v1.0.5 归档](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.5/discord-voice.wskin) 后在 `/admin/skins` 导入。最低应用版本：WebSpeak 0.2.8（需包含当前公开皮肤接口）。
+也可下载 [v1.0.11 归档](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.11/discord-voice.wskin) 后在 `/admin/skins` 导入。最低应用版本：WebSpeak 0.2.8（需包含当前公开皮肤接口）。
 
-You can also download the [v1.0.5 archive](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.5/discord-voice.wskin) and import it at `/admin/skins`. Requires WebSpeak 0.2.8 with the current public skin API.
+You can also download the [v1.0.11 archive](https://raw.githubusercontent.com/Huddle-Up-Forge/webspeak-skin-discord-voice/v1.0.11/discord-voice.wskin) and import it at `/admin/skins`. Requires WebSpeak 0.2.8 with the current public skin API.
 
 ## 贡献者与来源 / Contributors and origin
 
@@ -24,6 +24,16 @@ The original Discord-style skin was designed and implemented by [@yichen11818](h
 本仓库保留了从原始 PR 提取的皮肤源码提交及原作者署名。当前发行包的源码位于 `skin/`。
 
 This repository preserves the skin-only source history from the original PR with its original authorship. Sources for the current release are in `skin/`.
+
+## v1.0.11
+
+- 修正首页标识、访客统计和连接表单的布局与边框。
+- 聊天收起后释放侧栏空间，输入区保持在面板底部；平板和窄屏使用覆盖式聊天面板。
+- 窄屏增加音频设置入口，提供五种语言文案。
+- 修正语音状态、音频及屏幕共享设置的深色配色，以及服务器栏加号样式。
+- 修正减少动效规则的优先级。
+
+Fixes the home branding, visitor counter and form styling; removes the unused column when chat is closed and keeps the composer at the bottom; adds a mobile audio-settings entry in all five languages; themes the voice-status, audio and screen-sharing dialogs; styles the server-add button; and respects reduced-motion preferences. All changes are contained in the skin package.
 
 ## 构建与发布 / Build and publish
 
